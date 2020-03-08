@@ -10,6 +10,7 @@ body{
     border-radius: 50%;
     background: yellow;
     border: 4px solid rgb(0, 26, 255);
+    cursor: pointer;
     top: 200px;
     left: 300px;
 }
@@ -43,8 +44,8 @@ body{
 }
 
 .s-hamburger:hover{
-    box-shadow: 0px 0px 150px violet;
-    transition: ease 1s;
+    box-shadow: 0px 0px 20px 7px rgb(238, 255, 0);
+    transition: ease-out 1s;
 
     /*border-radius: 10%;
     transform: rotate(45deg);*/
@@ -60,9 +61,24 @@ body{
     to { border-radius: 10%; transform: rotate(45deg);}
 }
 
+@keyframes reverseHamburger{
+    from { border-radius: 10%; transform: rotate(45deg);}
+    to { border-radius: 50%; transform: rotate(-45deg);}
+}
+
+@keyframes LineDisappear{
+    from {opacity: 0.5;}
+    to { opacity: 0;}
+}
+.s-hamburger-active-reverse{
+    animation: reverseHamburger ease 1s forwards;
+}
 .s-hamburger-active{
     animation: hamburgerTrans ease 1s forwards;
 }
 .s-line-active{
     animation: lineAppaer 3s ease-out forwards;
+}
+.s-line-active-reverse{
+    animation: LineDisappear 1s ease-in forwards;
 }
